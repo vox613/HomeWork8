@@ -36,7 +36,7 @@ public class MyServlet extends HttpServlet {
         System.out.println(">> " + directory);
         ArrayList<String> foldersList = myBean.recursiveDirectory(directory);
         request.setAttribute("foldersList", foldersList);
-        getServletContext().getRequestDispatcher("/WEB-INF/test.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/WEB-INF/workPage.jsp").forward(request, response);
     }
 }
 

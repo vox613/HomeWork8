@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  homework:
+    image: jboss/wildfly:latest
+    ports:
+      - "8080:8080"
+      - "9990:9990"
+    restart: always
+    volumes:
+      - ./dockerFolder:/opt/jboss/wildfly/standalone/deployments/
