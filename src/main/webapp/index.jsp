@@ -2,6 +2,6 @@
 <html>
 <body>
 <h2>Enter to URL line the directory whose files you want to see:</h2>
-<div>For example - localhost/dir/?path=C:/Users/User/Desktop/Java/Projects</div>
+<div>For example - http://localhost:8080/dir/?path=/opt/jboss/wildfly/modules/system/layers/base/</div>
 </body>
 </html>

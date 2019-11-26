@@ -31,7 +31,8 @@ public class MyServlet extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String directory = request.getParameter("path");
-        directory = myBean.createFolderPath(directory);
+        System.out.println(">> directory << " + directory);
+        directory = myBean.checkFolderPath(directory);
         System.out.println(">> " + directory);
         ArrayList<String> foldersList = myBean.recursiveDirectory(directory);
         request.setAttribute("foldersList", foldersList);

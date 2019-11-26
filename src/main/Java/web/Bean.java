@@ -44,14 +44,10 @@ public class Bean {
      * @param inDirectory - The file system directory received with the GET request.
      * @return - Edited directory to search the file system.
      */
-    public String createFolderPath(String inDirectory) {
-        String outDirectory = "";
+    public String checkFolderPath(String inDirectory) {
+        String outDirectory = inDirectory;
         if ((inDirectory == null) || (inDirectory.isEmpty())) {
             outDirectory = ".";
-        } else {
-            for (int i = 0; i < inDirectory.length(); i++) {
-                outDirectory = inDirectory.replace('/', '\\');
-            }
         }
         return outDirectory;
     }
