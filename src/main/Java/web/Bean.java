@@ -39,17 +39,32 @@ public class Bean {
 
     /**
      * The method replaces all the characters "/" with "\" in the input string to form the correct path
-     * in the file system.
+     * in the file system where app is running.
      *
      * @param inDirectory - The file system directory received with the GET request.
      * @return - Edited directory to search the file system.
      */
     public String checkFolderPath(String inDirectory) {
-        String outDirectory = inDirectory;
+        String outDirectory = "";
+
         if ((inDirectory == null) || (inDirectory.isEmpty())) {
             outDirectory = ".";
+        } else {
+            if (isWindows()) {
+                for (int i = 0; i < inDirectory.length(); i++) {
+                    outDirectory = inDirectory.replace('/', '\\');
+                }
+            } else {
+                outDirectory = inDirectory;
+            }
         }
         return outDirectory;
     }
+
+    private static boolean isWindows() {
+        String os = System.getProperty("os.name").toLowerCase();
+        return (os.contains("win"));
+    }
+
 }
 
